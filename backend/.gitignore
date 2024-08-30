@@ -1,0 +1,13 @@
+# Python-related files
+full_stack_sentiment/
+*.pyc
+__pycache__/
+db.sqlite3  # If you use SQLite for local development
+*.log
+
+# Django-related files
+*.pot
+*.py[cod]
+*.sqlite3
+staticfiles/
+media/
