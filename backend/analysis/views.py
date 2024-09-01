@@ -2,6 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response 
 from .models import Analysis
 from .sentiment_code.SentimentAnalysisFacade import SentimentAnalysisFacade
+from .serializers import AnalysisSerializer
 
 facade = SentimentAnalysisFacade()
 
@@ -24,4 +25,10 @@ def analyze_text(request):
         'score': result.get_score()
     })
 
+@api_view(["GET"])
+def get_analysis_history(request):
+    history = Analysis.objects.all().order_by("-created_at")[:10]
+    history = reversed(history)
+    serializer = AnalysisSerializer(history, many=True)
+    return Response(serializer.data)
 
