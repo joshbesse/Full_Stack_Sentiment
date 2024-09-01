@@ -1,5 +1,5 @@
-from AnalyzerMaker import AnalyzerMaker
-from BasicAnalyzer import BasicAnalyzer
+from .AnalyzerMaker import AnalyzerMaker
+from .BasicAnalyzer import BasicAnalyzer
 
 class BasicAnalyzerMaker(AnalyzerMaker):
     def make_analyzer(self):

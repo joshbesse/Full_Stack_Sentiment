@@ -1,4 +1,4 @@
-from AnalyzerState import AnalyzerState
+from .AnalyzerState import AnalyzerState
 
 class InitializationState(AnalyzerState):
     def get_state(self):
@@ -8,5 +8,5 @@ class InitializationState(AnalyzerState):
         print("\nInitialization: preparing analysis")
     
     def change_state(self):
-        from ProcessingState import ProcessingState
+        from .ProcessingState import ProcessingState
         return ProcessingState()

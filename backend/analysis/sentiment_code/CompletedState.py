@@ -1,4 +1,4 @@
-from AnalyzerState import AnalyzerState
+from .AnalyzerState import AnalyzerState
 
 class CompletedState(AnalyzerState):
     def get_state(self):
@@ -8,6 +8,6 @@ class CompletedState(AnalyzerState):
         print("\nCompleted: analysis finished")
 
     def change_state(self):
-        from InitializationState import InitializationState
+        from .InitializationState import InitializationState
         return InitializationState()
 

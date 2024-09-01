@@ -6,5 +6,5 @@ class ProcessingState:
         print("\nProcessing: analyzing sentiment")
 
     def change_state(self):
-        from CompletedState import CompletedState
+        from .CompletedState import CompletedState
         return CompletedState()

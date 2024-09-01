@@ -1,10 +1,10 @@
 import re
 
-from Read import Read 
-from AnalyzerContext import AnalyzerContext
-from InitializationState import InitializationState
-from SentimentResult import SentimentResult
-from SentimentMemento import SentimentMemento
+from .Read import Read 
+from .AnalyzerContext import AnalyzerContext
+from .InitializationState import InitializationState
+from .SentimentResult import SentimentResult
+from .SentimentMemento import SentimentMemento
 
 class AdvancedAnalyzer:
     def __init__(self):

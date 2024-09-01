@@ -1,5 +1,5 @@
-from BasicAnalyzerMaker import BasicAnalyzerMaker
-from AdvancedAnalyzerMaker import AdvancedAnalyzerMaker
+from .BasicAnalyzerMaker import BasicAnalyzerMaker
+from .AdvancedAnalyzerMaker import AdvancedAnalyzerMaker
 
 class SentimentAnalysisFacade:
     def __init__(self):
@@ -28,6 +28,7 @@ class SentimentAnalysisFacade:
             return 
         result = self.sentiment_analyzer.analyze_sentiment(text)
         print(f"sentiment: {result.get_sentiment()}\nscore: {result.get_score()}")
+        return result 
 
     def save_analysis(self):
         if self.sentiment_analyzer is None:

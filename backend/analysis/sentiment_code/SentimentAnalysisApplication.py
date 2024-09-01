@@ -1,4 +1,4 @@
-from SentimentAnalysisFacade import SentimentAnalysisFacade
+from .SentimentAnalysisFacade import SentimentAnalysisFacade
 
 class SentimentAnalysisApplication:
     @staticmethod 

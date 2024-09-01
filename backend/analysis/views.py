@@ -1,7 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response 
 from .models import Analysis
-from sentiment_code import SentimentAnalysisFacade
+from .sentiment_code.SentimentAnalysisFacade import SentimentAnalysisFacade
 
 facade = SentimentAnalysisFacade()
 
