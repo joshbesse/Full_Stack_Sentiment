@@ -4,4 +4,4 @@ from .models import Analysis
 class AnalysisSerializer(serializers.ModelSerializer):
     class Meta:
         model = Analysis
-        fields = ['id', 'text', 'sentiment', 'score', 'created_at']
+        fields = ['id', 'analyzer', 'text', 'sentiment', 'score', 'created_at']

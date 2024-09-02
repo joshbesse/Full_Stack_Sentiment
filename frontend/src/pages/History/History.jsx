@@ -21,15 +21,16 @@ function History() {
     return (
         <div className='history'>
             <h1>Analysis History</h1>
-            <ul>
+            <ol>
                 {history.map((item, index) => (
                     <li key={index}>
+                        <p>Analyzer: {item.analyzer}</p>
                         <p>Text: {item.text}</p>
                         <p>Sentiment: {item.sentiment}</p>
                         <p>Score: {item.score}</p>
                     </li>
                 ))}
-            </ul>
+            </ol>
         </div>
     );
 }
