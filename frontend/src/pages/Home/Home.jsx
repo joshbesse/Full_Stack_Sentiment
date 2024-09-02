@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function Home() {
     const [text, setText] = useState('');
-    const [analyzerType, setAnalyzerType] = useState(null);
+    const [analyzerType, setAnalyzerType] = useState("basic");
     const [result, setResult] = useState(null);
     const [error, setError] = useState(null);
 
