@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Home.css'
 
 function Home() {
     const [text, setText] = useState('');
@@ -39,13 +40,21 @@ function Home() {
     return (
         <div className='home'>
             <h1>Sentiment Analysis</h1>
-            <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder='Enter text to analyze.'/>
-            <select value={analyzerType} onChange={(e) => setAnalyzerType(e.target.value)}>
-                <option value="basic">Basic Lexicon Analyzer</option>
-                <option value="advanced">Advanced Lexicon Analyzer</option>
-            </select>
-            <button onClick={analyzeClick}>Analyze</button>
-            {renderResult()}
+            <div className='content'>
+                <div className='select_container'>
+                    <select value={analyzerType} onChange={(e) => setAnalyzerType(e.target.value)}>
+                        <option value="basic">Basic Lexicon Analyzer</option>
+                        <option value="advanced">Advanced Lexicon Analyzer</option>
+                    </select>
+                </div>
+                <div className='textarea_container'>
+                    <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder='Enter text to analyze.'/>
+                    <button id='button' onClick={analyzeClick}>Analyze</button>
+                    </div>
+                <div className='result_container'>
+                    {renderResult()}
+                </div>
+            </div>
         </div>
     );
 }

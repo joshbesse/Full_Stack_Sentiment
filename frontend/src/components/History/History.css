@@ -1,0 +1,14 @@
+.history {
+    padding-left: 30px;
+}
+
+.history li {
+    margin-bottom: 10px;
+    padding: 5px 1;
+    list-style-position: inside;
+}
+
+.history p {
+    font-size: 20px;
+    margin: 2px 0;
+}

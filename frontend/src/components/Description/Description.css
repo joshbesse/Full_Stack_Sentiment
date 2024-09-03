@@ -1,0 +1,14 @@
+.description {
+    padding-left: 30px;
+}
+
+.description h2 {
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.description p {
+    color: #0fa628; 
+}
