@@ -1,3 +1,4 @@
 # Ignore environments and build files
 backend/venv/
 frontend/node_modules/
+ML model/sentiment_analysis.csv
