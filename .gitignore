@@ -2,3 +2,4 @@
 backend/venv/
 frontend/node_modules/
 ML model/sentiment_analysis.csv
+ML model/cleaned_data.pkl
