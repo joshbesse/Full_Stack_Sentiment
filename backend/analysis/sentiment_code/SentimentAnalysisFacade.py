@@ -1,5 +1,7 @@
 from .BasicAnalyzerMaker import BasicAnalyzerMaker
 from .AdvancedAnalyzerMaker import AdvancedAnalyzerMaker
+from .LogisticRegressionAnalyzerMaker import LogisticRegressionAnalyzerMaker
+from .RandomForestAnalyzerMaker import RandomForestAnalyzerMaker
 
 class SentimentAnalysisFacade:
     def __init__(self):
@@ -19,6 +21,14 @@ class SentimentAnalysisFacade:
             maker = AdvancedAnalyzerMaker()
             self.sentiment_analyzer = maker.make_analyzer()
             print(f"\n{type} analyzer selected")
+        elif type == 'logistic_regression':
+            maker = LogisticRegressionAnalyzerMaker()
+            self.sentiment_analyzer = maker.make_analyzer()
+            print(f'\n{type} analyzer selected')
+        elif type == 'random_forest':
+            maker = RandomForestAnalyzerMaker()
+            self.sentiment_analyzer = maker.make_analyzer()
+            print(f'\n{type} analyzer selected')
         else:
             print("\nPlease select 'basic' or 'advanced'.")
 
@@ -27,7 +37,7 @@ class SentimentAnalysisFacade:
             print("\nPlease select an analyzer first.")
             return 
         result = self.sentiment_analyzer.analyze_sentiment(text)
-        print(f"sentiment: {result.get_sentiment()}\nscore: {result.get_score()}")
+        print(f"text: {text}\n sentiment: {result.get_sentiment()}\nscore: {result.get_score()}")
         return result 
 
     def save_analysis(self):
