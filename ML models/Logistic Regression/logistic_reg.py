@@ -42,6 +42,6 @@ print(f'Best Cross-Validation F1 Score: {grid_search.best_score_}')
 # save vectorizer, label encoder, and trained model
 joblib.dump(vectorizer, './ML models/Logistic Regression/tfidf_vectorizer.pkl')
 joblib.dump(label_encoder, './ML models/Logistic Regression/label_encoder.pkl')
-joblib.dump(model, './ML models/Logistic Regression/log_reg_model.pkl')
+joblib.dump(grid_search.best_estimator_, './ML models/Logistic Regression/log_reg_model.pkl')
 
 
