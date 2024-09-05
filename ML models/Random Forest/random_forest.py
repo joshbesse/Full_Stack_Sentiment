@@ -2,7 +2,10 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import StratifiedKFold, cross_val_score, GridSearchCV
+from sklearn.model_selection import StratifiedKFold, cross_val_score, GridSearchCV, cross_val_predict
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+import seaborn as sns 
+import matplotlib.pyplot as plt 
 import joblib
 
 # load cleaned data
@@ -46,4 +49,19 @@ joblib.dump(vectorizer, './ML models/Random Forest/tfidf_vectorizer.pkl')
 joblib.dump(label_encoder, './ML models/Random Forest/label_encoder.pkl')
 joblib.dump(grid_search.best_estimator_, './ML models/Random Forest/rand_for_model.pkl')
 
+# extract best model
+best_model = grid_search.best_estimator_
 
+# generate cross-validation predictions
+y_pred = cross_val_predict(estimator=best_model, X=X, y=y, cv=kf)
+
+# examine accuracy score, classification report, and confusion matrix
+accuracy = accuracy_score(y, y_pred)
+print("Accuracy Score:", accuracy)
+report = classification_report(y, y_pred, target_names=label_encoder.classes_)
+print("Classification Report:\n", report)
+cm = confusion_matrix(y, y_pred)
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=label_encoder.classes_, yticklabels=label_encoder.classes_)
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.show()
