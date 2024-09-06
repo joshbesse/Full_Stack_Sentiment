@@ -1,5 +1,6 @@
 # Ignore environments and build files
 backend/venv/
 frontend/node_modules/
-ML model/sentiment_analysis.csv
-ML model/cleaned_data.pkl
+ML models/sentiment_analysis.csv
+ML models/cleaned_data.pkl
+ML models/BERT/model_data
