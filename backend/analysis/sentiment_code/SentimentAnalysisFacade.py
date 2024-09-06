@@ -2,6 +2,7 @@ from .BasicAnalyzerMaker import BasicAnalyzerMaker
 from .AdvancedAnalyzerMaker import AdvancedAnalyzerMaker
 from .LogisticRegressionAnalyzerMaker import LogisticRegressionAnalyzerMaker
 from .RandomForestAnalyzerMaker import RandomForestAnalyzerMaker
+from .BERTAnalyzerMaker import BERTAnalyzerMaker
 
 class SentimentAnalysisFacade:
     def __init__(self):
@@ -27,6 +28,10 @@ class SentimentAnalysisFacade:
             print(f'\n{type} analyzer selected')
         elif type == 'random_forest':
             maker = RandomForestAnalyzerMaker()
+            self.sentiment_analyzer = maker.make_analyzer()
+            print(f'\n{type} analyzer selected')
+        elif type == 'BERT':
+            maker = BERTAnalyzerMaker()
             self.sentiment_analyzer = maker.make_analyzer()
             print(f'\n{type} analyzer selected')
         else:

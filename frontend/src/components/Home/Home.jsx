@@ -45,6 +45,9 @@ function Home() {
                     <select value={analyzerType} onChange={(e) => setAnalyzerType(e.target.value)}>
                         <option value="basic">Basic Lexicon Analyzer</option>
                         <option value="advanced">Advanced Lexicon Analyzer</option>
+                        <option value="logistic_regression">Logistic Regression Analyzer</option>
+                        <option value="random_forest">Random Forest Analyzer</option>
+                        <option value="BERT">BERT Analyzer</option>
                     </select>
                 </div>
                 <div className='textarea_container'>
