@@ -4,6 +4,7 @@ from datasets import Dataset, ClassLabel
 from transformers import BertTokenizer, BertForSequenceClassification, TrainingArguments, Trainer
 import torch
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+import joblib
 import seaborn as sns
 import matplotlib.pyplot as plt 
 
@@ -45,14 +46,14 @@ test_dataset.set_format(type='torch', columns=['input_ids', 'attention_mask', 'l
 
 # define training arguments
 training_args = TrainingArguments(
-    output_dir='./results',     
+    output_dir='./ML models/BERT/results',     
     evaluation_strategy='epoch',
     save_strategy='epoch',  
     per_device_train_batch_size=8,   
     per_device_eval_batch_size=8,   
     num_train_epochs=3,         
     weight_decay=0.01,               
-    logging_dir='./logs',             
+    logging_dir='./ML models/BERT/logs',             
     logging_steps=10,
     save_total_limit=2,               
     load_best_model_at_end=True         
@@ -92,4 +93,5 @@ plt.show()
 
 # save tokenizer and model
 tokenizer.save_pretrained('./ML models/BERT/')
+joblib.dump(label_encoder, './ML models/BERT/label_encoder.pkl')
 model.save_pretrained('./ML models/BERT/')
