@@ -39,7 +39,7 @@ nltk.download('punkt')
 nltk.download('wordnet')
 
 # load csv file 
-df = pd.read_csv('./ML model/sentiment_analysis.csv')
+df = pd.read_csv('./ML models/sentiment_analysis.csv')
 
 # remove duplicate rows 
 df = df.drop_duplicates()
@@ -48,7 +48,7 @@ df = df.drop_duplicates()
 df[['tokens', 'clean_text']] = df['text'].apply(prepare_text).apply(pd.Series)
 
 # save cleaned data as pickle file 
-df.to_pickle('./ML model/cleaned_data.pkl')
+df.to_pickle('./ML models/cleaned_data.pkl')
 
 # data visualization 
 # sentiment class distribution
