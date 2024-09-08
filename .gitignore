@@ -12,3 +12,6 @@ ML models/BERT/model.safetensors
 ML models/BERT/special_tokens_map.json
 ML models/BERT/tokenizer_config.json
 Ml models/BERT/vocab.txt
+ML models/sentiment_analysis.csv
+ML models/cleaned_data2.pkl
+ML models/cleaned_data.pkl
