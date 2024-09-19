@@ -2,12 +2,20 @@
 full_stack_sentiment/
 *.pyc
 __pycache__/
-db.sqlite3  # If you use SQLite for local development
 *.log
 
 # Django-related files
 *.pot
 *.py[cod]
 *.sqlite3
+db.sqlite3
 staticfiles/
 media/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# System-related files
+.DS_Store
