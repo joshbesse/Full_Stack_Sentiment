@@ -9,7 +9,6 @@ import joblib
 
 # load cleaned data
 df = pd.read_pickle('./ML models/cleaned_data2.pkl') 
-df = df[:50]
 
 # input text vectorization
 vectorizer = TfidfVectorizer(ngram_range=(1, 3))
